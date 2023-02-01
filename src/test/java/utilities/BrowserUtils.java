@@ -62,7 +62,7 @@ public class BrowserUtils {
         return uuid.toString();
     }
 
-    public static WebElement watElementToBeClickable(WebElement element){
+    public static WebElement waitElementToBeClickable(WebElement element){
         WebDriverWait wait=new WebDriverWait(Driver.getDriver(), 10);
         WebElement element1= wait.until((ExpectedConditions.elementToBeClickable(element)));
         return element1;

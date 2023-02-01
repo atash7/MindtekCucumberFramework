@@ -100,7 +100,6 @@ public class EtsyAppSteps {
                 String expectedPrice2 = filterRange.substring(filterRange.lastIndexOf(" ")+1); //750
                 double expectedPriceDbl2 = Double.parseDouble(expectedPrice2);
                 Assert.assertTrue(actualPriceDbl >= expectedPriceDbl1 && actualPriceDbl <= expectedPriceDbl2);
-
             }
         } else if (filterRange.equals("500 to 1000")) {
             Thread.sleep(3000);
@@ -116,11 +115,9 @@ public class EtsyAppSteps {
                 String expectedPrice2 = filterRange.substring(filterRange.lastIndexOf(" ")+1); //1000
                 double expectedPriceDbl2 = Double.parseDouble(expectedPrice2);
                 Assert.assertTrue(actualPriceDbl >= expectedPriceDbl1 && actualPriceDbl <= expectedPriceDbl2);
-
             }
         }
     }
-
     @When("user clicks on {string} section")
     public void user_clicks_on_section(String section) {
         if (section.equals("Jewelry & Accessories")) {
@@ -140,10 +137,7 @@ public class EtsyAppSteps {
         }else if (section.equals("Gifts & Gift Cards")) {
             etsyAppHomePage.giftsAndCards.click();
         }
-
-
     }
-
     @Then("user validates the title is {string} and the header is {string}")
     public void user_validates_the_title_is_and_the_header_is(String title, String header) {
         String actualHeader = "";
@@ -173,11 +167,8 @@ public class EtsyAppSteps {
             actualHeader = etsyTitlePages.ggHeader.getText();
             actualTitle = driver.getTitle();
         }
-
-
         Assert.assertEquals(title,actualTitle);
         Assert.assertEquals(header,actualHeader);
-
     }
 
 }
